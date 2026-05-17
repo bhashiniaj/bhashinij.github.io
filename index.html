@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>FYP | PV Integrated EV Charging System | University of Peradeniya</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Spinner -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Topbar -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height:45px;">
+                    <small class="me-3 text-light"><i class="fa fa-university me-2"></i>University of Peradeniya, Sri Lanka</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>e21060@eng.pdn.ac.lk</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height:45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://github.com/yourusername"><i class="fab fa-github fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="https://linkedin.com/in/yourprofile"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar & Carousel -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h1 class="m-0 text-white"><i class="fa fa-solar-panel me-2" style="color:#0d6efd"></i>PV-EV FYP</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="#about" class="nav-item nav-link">About</a>
+                    <a href="#weekly" class="nav-item nav-link">Weekly Log</a>
+                    <a href="#specs" class="nav-item nav-link">Specs</a>
+                    <a href="#team" class="nav-item nav-link">Team</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="img/solar-ev.jpg" alt="PV EV System">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width:900px;">
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">EE 405 — Final Year Project</h5>
+                            <h1 class="display-2 text-white mb-md-4 animated zoomIn">PV Integrated EV Charging System</h1>
+                            <p class="text-white mb-4 animated slideInDown">University of Peradeniya &nbsp;|&nbsp; Dept. of Electrical &amp; Electronic Engineering</p>
+                            <a href="#weekly" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Weekly Updates</a>
+                            <a href="#about" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/carousel-2.jpg" alt="Engineering">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width:900px;">
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Solar Energy &amp; Smart Charging</h5>
+                            <h1 class="display-2 text-white mb-md-4 animated zoomIn">Clean Energy for Electric Vehicles</h1>
+                            <p class="text-white mb-4">48V LiFePO₄ Battery &nbsp;|&nbsp; MPPT Boost Converter &nbsp;|&nbsp; Supercapacitor Buffer</p>
+                            <a href="#specs" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">System Specs</a>
+                            <a href="#team" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Meet the Team</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Key Stats -->
+    <div class="container-fluid facts py-5 pt-lg-0">
+        <div class="container py-5 pt-lg-0">
+            <div class="row gx-0">
+                <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height:150px;">
+                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width:60px;height:60px;">
+                            <i class="fa fa-sun text-primary fa-lg"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-white mb-0">PV Array</h5>
+                            <h2 class="text-white mb-0">300W</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="bg-light shadow d-flex align-items-center justify-content-center p-4" style="height:150px;">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2" style="width:60px;height:60px;">
+                            <i class="fa fa-bolt text-white fa-lg"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-primary mb-0">DC Bus</h5>
+                            <h2 class="mb-0">48V</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.5s">
+                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height:150px;">
+                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width:60px;height:60px;">
+                            <i class="fa fa-battery-three-quarters text-primary fa-lg"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-white mb-0">LiFePO₄</h5>
+                            <h2 class="text-white mb-0">288Wh</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow zoomIn" data-wow-delay="0.7s">
+                    <div class="bg-light shadow d-flex align-items-center justify-content-center p-4" style="height:150px;">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2" style="width:60px;height:60px;">
+                            <i class="fa fa-road text-white fa-lg"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-primary mb-0">Daily Range</h5>
+                            <h2 class="mb-0">+18.75km</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" id="about">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h5 class="fw-bold text-uppercase" style="color:var(--primary)">EE 405 Final Year Project</h5>
+                        <h1 class="mb-0">PV Integrated EV Charging System</h1>
+                    </div>
+                    <p class="mb-4">This FYP designs a <strong>solar-powered electric vehicle charging system</strong> using a 300W flexible mono-crystalline PV array, a custom DC-DC boost converter with MPPT control, a supercapacitor buffer, and a 48V LiFePO₄ battery pack — targeting light EVs such as e-bicycles and three-wheelers in Sri Lanka.</p>
+                    <div class="row g-0 mb-3">
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>300W Mono-Si PV Panel</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Non-isolated Boost Converter</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>P&amp;O MPPT Algorithm</h5>
+                        </div>
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>48V LiFePO₄ Battery Pack</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Supercapacitor Buffer</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>1.5 kWh/day Energy Yield</h5>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width:60px;height:60px;flex-shrink:0;">
+                            <i class="fa fa-user-graduate text-white fa-lg"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h6 class="mb-0">Supervised by</h6>
+                            <h5 class="text-primary mb-0">Dr. Prabath J. Binduhewa</h5>
+                        </div>
+                    </div>
+                    <a href="#weekly" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">View Weekly Log</a>
+                </div>
+                <div class="col-lg-5" style="min-height:400px;">
+                    <div class="position-relative h-100 wow zoomIn" data-wow-delay="0.9s">
+                        <img class="position-absolute w-100 h-100 rounded" src="img/solar-ev.jpg" style="object-fit:cover;" alt="PV EV System">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Objectives -->
+    <div class="container-fluid bg-light py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width:600px;">
+                <h5 class="fw-bold text-uppercase" style="color:var(--primary)">Project Goals</h5>
+                <h1 class="mb-0">Three Core Objectives</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item bg-white rounded d-flex flex-column align-items-center justify-content-center text-center p-5 h-100">
+                        <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-4" style="width:70px;height:70px;">
+                            <i class="fa fa-sun text-white fa-2x"></i>
+                        </div>
+                        <h4 class="mb-3">Solar Energy Harvesting</h4>
+                        <p class="m-0">Size a 1.5m² flexible mono-Si PV panel (300W) with MPPT to generate 1.5 kWh/day under Sri Lanka's ~5 peak sun hours, providing +18.75 km daily EV range.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="service-item bg-white rounded d-flex flex-column align-items-center justify-content-center text-center p-5 h-100">
+                        <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-4" style="width:70px;height:70px;">
+                            <i class="fa fa-bolt text-white fa-2x"></i>
+                        </div>
+                        <h4 class="mb-3">DC-DC Boost Converter</h4>
+                        <p class="m-0">Design a non-isolated boost converter (L=45µH, C=163µF, f=50kHz) stepping up 18–36V PV input to stable 48V bus, with 90–95% estimated efficiency.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                    <div class="service-item bg-white rounded d-flex flex-column align-items-center justify-content-center text-center p-5 h-100">
+                        <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-4" style="width:70px;height:70px;">
+                            <i class="fa fa-battery-three-quarters text-white fa-2x"></i>
+                        </div>
+                        <h4 class="mb-3">Smart Battery Management</h4>
+                        <p class="m-0">Integrate a 48V LiFePO₄ pack (15S, 6Ah, 288Wh) with EDLC supercapacitor buffer — absorbing current spikes and extending battery life by 20–30%.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Weekly Progress Log -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" id="weekly">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width:600px;">
+                <h5 class="fw-bold text-uppercase" style="color:var(--primary)">Progress Tracker</h5>
+                <h1 class="mb-0">15-Week Development Log</h1>
+            </div>
+
+            <!-- Phase 1 -->
+            <p class="phase-header">📚 Phase 1: Literature Review &amp; Planning — Weeks 1 to 3</p>
+            <div class="row g-4 mb-2">
+                <div class="col-lg-4 col-md-6">
+                    <a href="week1.html" class="text-decoration-none">
+                        <div class="week-card card shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <span class="fw-bold text-muted" style="font-size:.8rem;">WEEK 1</span>
+                                    <span class="week-badge badge-done">✅ Done</span>
+                                </div>
+                                <h6 class="fw-bold mb-1">System Architecture, Battery Study &amp; Range Anxiety</h6>
+                                <p class="text-muted small mb-0">LiFePO₄ selection, supercapacitor buffer strategy, system block diagram.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="week2.html" class="text-decoration-none">
+                        <div class="week-card card shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <span class="fw-bold text-muted" style="font-size:.8rem;">WEEK 2</span>
+                                    <span class="week-badge badge-done">✅ Done</span>
+                                </div>
+                                <h6 class="fw-bold mb-1">PV Panel Selection, MPPT &amp; Boost Converter Design</h6>
+                                <p class="text-muted small mb-0">300W mono-Si panel, P&amp;O MPPT, full parametric converter calculations.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="week3.html" class="text-decoration-none">
+                        <div class="week-card card shadow-sm h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <span class="fw-bold text-muted" style="font-size:.8rem;">WEEK 3</span>
+                                    <span class="week-badge badge-done">✅ Done</span>
+                                </div>
+                                <h6 class="fw-bold mb-1">Literature Review Report Finalised &amp; Submitted</h6>
+                                <p class="text-muted small mb-0">Full report compiled, presented to supervisor, and submitted.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <p class="phase-header">🔧 Phase 2: Sensor Development &amp; Simulation — Weeks 4 to 10</p>
+            <div class="row g-4 mb-2">
+                <div class="col-lg-4 col-md-6"><a href="week4.html" class="text-decoration-none"><div class="week-card card shadow-sm h-100"><div class="card-body"><div class="d-flex justify-content-between align-items-start mb-2"><span class="fw-bold text-muted" style="font-size:.8rem;">WEEK 4</span><span class="week-badge badge-upcoming">⏳ Upcoming</span></div><h6 class="fw-bold mb-1">Irradiance Meter — Functional Prototype</h6><p class="text-muted small mb-0">Build &amp; test the irradiance and temperature sensor unit.</p></div></div></a></div>
+                <div class="col-lg-4 col-md-6"><a href="week5.html" class="text-decoration-none"><div class="week-card card shadow-sm h-100"><div class="card-body"><div class="d-flex justify-content-between align-items-start mb-2"><span class="fw-bold text-muted" style="font-size:.8rem;">WEEK 5</span><span class="week-badge badge-upcoming">⏳ Upcoming</span></div><h6 class="fw-bold mb-1">PV System Simulation in MATLAB/Simulink</h6><p class="text-muted small mb-0">Model PV panel, simulate I-V and P-V curves at different irradiance.</p></div></div></a></div>
+                <div class="col-lg-4 col-md-6"><a href="week6.html" class="text-decoration-none"><div class="week-card card shadow-sm h-100"><div class="card-body"><div class="d-flex justify-content-between align-items-start mb-2"><span class="fw-bold text-muted" style="font-size:.8rem;">WEEK 6</span><span class="week-badge badge-upcoming">⏳ Upcoming</span></div><h6 class="fw-bold mb-1">Testing Box — Incandescent Bulb Array</h6><p class="text-muted small mb-0">Construct controlled indoor lighting test environment.</p></div></div></a></div>
+                <div class="col-lg-4 col-md-6"><a href="week7.html" class="text-decoration-none"><div class="week-card card shadow-sm h-100"><div class="card-body"><div class="d-flex justify-content-between align-items-start mb-2"><span class="fw-bold text-muted" style="font-size:.8rem;">WEEK 7</span><span class="week-badge badge-upcoming">⏳ Upcoming</span></div><h6 class="fw-bold mb-1">Sensor Calibration &amp; Design Report</h6><p class="text-muted small mb-0">Calibrate sensors and document results in a report.</p></div></div></a></div>
+                <div class="col-lg-4 col-md-6"><a href="week8.html" class="text-decoration-none"><div class="week-card card shadow-sm h-100"><div class="card-body"><div class="d-flex justify-content-between align-items-start mb-2"><span class="fw-bold text-muted" style="font-size:.8rem;">WEEK 8</span><span class="week-badge badge-upcoming">⏳ Upcoming</span></div><h6 class="fw-bold mb-1">MPPT Closed-Loop Simulation</h6><p class="text-muted small mb-0">Simulate full MPPT control loop with boost converter in Simulink.</p></div></div></a></div>
+                <div class="col-lg-4 col-md-6"><a href="week9.html" class="text-decoration-none"><div class="week-card card shadow-sm h-100"><div class="card-body"><div class="d-flex justify-content-between align-items-start mb-2"><span class="fw-bold text-muted" style="font-size:.8rem;">WEEK 9</span><span class="week-badge badge-upcoming">⏳ Upcoming</span></div><h6 class="fw-bold mb-1">Testing Box Complete &amp; Sensor Report</h6><p class="text-muted small mb-0">Finalise testing box; submit sensor calibration report.</p></div></div></a></div>
+                <div class="col-lg-4 col-md-6"><a href="week10.html" class="text-decoration-none"><div class="week-card card shadow-sm h-100"><div class="card-body"><div class="d-flex justify-content-between align-items-start mb-2"><span class="fw-bold text-muted" style="font-size:.8rem;">WEEK 10</span><span class="week-badge badge-upcoming">⏳ Upcoming</span></div><h6 class="fw-bold mb-1">Full Simulation Validation Report</h6><p class="text-muted small mb-0">Complete &amp; submit comprehensive simulation validation report.</p></div></div></a></div>
+            </div>
+
+            <!-- Phase 3 -->
+            <p class="phase-header">⚡ Phase 3: Hardware Build — Weeks 11 to 15</p>
+            <div class="row g-4 mb-2">
+                <div class="col-lg-4 col-md-6"><a href="week11.html" class="text-decoration-none"><div class="week-card card shadow-sm h-100"><div class="card-body"><div class="d-flex justify-content-between align-items-start mb-2"><span class="fw-bold text-muted" style="font-size:.8rem;">WEEK 11</span><span class="week-badge badge-upcoming">⏳ Upcoming</span></div><h6 class="fw-bold mb-1">Component Sourcing &amp; PCB Schematics</h6><p class="text-muted small mb-0">Source all components; draw full circuit schematic in KiCad.</p></div></div></a></div>
+                <div class="col-lg-4 col-md-6"><a href="week12.html" class="text-decoration-none"><div class="week-card card shadow-sm h-100"><div class="card-body"><div class="d-flex justify-content-between align-items-start mb-2"><span class="fw-bold text-muted" style="font-size:.8rem;">WEEK 12</span><span class="week-badge badge-upcoming">⏳ Upcoming</span></div><h6 class="fw-bold mb-1">PCB Layout &amp; Fabrication</h6><p class="text-muted small mb-0">Design PCB layout; send to manufacturer for fabrication.</p></div></div></a></div>
+                <div class="col-lg-4 col-md-6"><a href="week13.html" class="text-decoration-none"><div class="week-card card shadow-sm h-100"><div class="card-body"><div class="d-flex justify-content-between align-items-start mb-2"><span class="fw-bold text-muted" style="font-size:.8rem;">WEEK 13</span><span class="week-badge badge-upcoming">⏳ Upcoming</span></div><h6 class="fw-bold mb-1">Hardware Assembly &amp; Initial Testing</h6><p class="text-muted small mb-0">Solder and assemble the PCB; first power-on tests.</p></div></div></a></div>
+                <div class="col-lg-4 col-md-6"><a href="week14.html" class="text-decoration-none"><div class="week-card card shadow-sm h-100"><div class="card-body"><div class="d-flex justify-content-between align-items-start mb-2"><span class="fw-bold text-muted" style="font-size:.8rem;">WEEK 14</span><span class="week-badge badge-upcoming">⏳ Upcoming</span></div><h6 class="fw-bold mb-1">System Integration &amp; Performance Testing</h6><p class="text-muted small mb-0">Connect all subsystems; measure efficiency and charging performance.</p></div></div></a></div>
+                <div class="col-lg-4 col-md-6"><a href="week15.html" class="text-decoration-none"><div class="week-card card shadow-sm h-100"><div class="card-body"><div class="d-flex justify-content-between align-items-start mb-2"><span class="fw-bold text-muted" style="font-size:.8rem;">WEEK 15</span><span class="week-badge badge-upcoming">⏳ Upcoming</span></div><h6 class="fw-bold mb-1">Final Converter Prototype &amp; Submission</h6><p class="text-muted small mb-0">Fully assembled small-scale DC-DC converter hardware; final report.</p></div></div></a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Specs -->
+    <div class="container-fluid bg-light py-5 wow fadeInUp" id="specs">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width:600px;">
+                <h5 class="fw-bold text-uppercase" style="color:var(--primary)">Design Calculations</h5>
+                <h1 class="mb-0">System Specifications</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="text-primary mb-3"><i class="fa fa-sun me-2"></i>PV &amp; Energy</h5>
+                    <table class="table table-bordered table-hover">
+                        <tr><th>PV Panel Type</th><td>Flexible Mono-crystalline Silicon</td></tr>
+                        <tr><th>Panel Area</th><td>1.5 m²</td></tr>
+                        <tr><th>Panel Efficiency</th><td>20%</td></tr>
+                        <tr><th>Peak Output Power</th><td>300W (P = A × G × η)</td></tr>
+                        <tr><th>Daily Energy (Sri Lanka)</th><td>1.5 kWh/day (5 peak hours)</td></tr>
+                        <tr><th>Added EV Range</th><td>18.75 km/day (@ 80Wh/km)</td></tr>
+                        <tr><th>MPPT Algorithm</th><td>Perturb &amp; Observe (P&amp;O)</td></tr>
+                    </table>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h5 class="text-primary mb-3"><i class="fa fa-bolt me-2"></i>Converter &amp; Battery</h5>
+                    <table class="table table-bordered table-hover">
+                        <tr><th>Converter Topology</th><td>Non-isolated Boost DC-DC</td></tr>
+                        <tr><th>Input Voltage (PV)</th><td>18V – 36V</td></tr>
+                        <tr><th>Output Voltage (Bus)</th><td>48V</td></tr>
+                        <tr><th>Max Duty Cycle</th><td>62.5% (worst-case shading)</td></tr>
+                        <tr><th>Inductor (Lmin)</th><td>45 µH</td></tr>
+                        <tr><th>Output Capacitor (Cout)</th><td>163 µF</td></tr>
+                        <tr><th>Switching Frequency</th><td>50 kHz</td></tr>
+                        <tr><th>Estimated Efficiency</th><td>90 – 95%</td></tr>
+                        <tr><th>Battery</th><td>48V LiFePO₄, 15S, 6Ah, 288Wh</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team -->
+    <div class="container-fluid py-5 wow fadeInUp" id="team">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width:600px;">
+                <h5 class="fw-bold text-uppercase" style="color:var(--primary)">EE 405</h5>
+                <h1 class="mb-0">Project Team</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item text-center p-4 bg-white rounded shadow-sm">
+                        <img src="img/my-photo.jpg" alt="A.J. Bhashini" class="mb-3">
+                        <h5 class="mb-1">A.J. Bhashini</h5>
+                        <p class="text-primary mb-1 small fw-bold">E/21/060</p>
+                        <p class="text-muted small">Electrical &amp; Electronic Engineering</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item text-center p-4 bg-white rounded shadow-sm">
+                        <img src="img/team-2.jpg" alt="Athiyaman S." class="mb-3">
+                        <h5 class="mb-1">Athiyaman S.</h5>
+                        <p class="text-primary mb-1 small fw-bold">E/21/043</p>
+                        <p class="text-muted small">Electrical &amp; Electronic Engineering</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item text-center p-4 bg-white rounded shadow-sm">
+                        <img src="img/team-3.jpg" alt="Shakthidharan S." class="mb-3">
+                        <h5 class="mb-1">Shakthidharan S.</h5>
+                        <p class="text-primary mb-1 small fw-bold">E/21/376</p>
+                        <p class="text-muted small">Electrical &amp; Electronic Engineering</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item text-center p-4 bg-white rounded shadow-sm">
+                        <img src="img/team-1.jpg" alt="Dr. Prabath Binduhewa" class="mb-3">
+                        <h5 class="mb-1">Dr. Prabath J. Binduhewa</h5>
+                        <p class="text-primary mb-1 small fw-bold">Supervisor</p>
+                        <p class="text-muted small">Dept. of Electrical &amp; Electronic Engineering</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="text-muted">University of Peradeniya &nbsp;|&nbsp; Department of Electrical &amp; Electronic Engineering &nbsp;|&nbsp; Module: EE 405</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid footer pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="text-white mb-4">PV-EV FYP Portfolio</h3>
+                    <p class="text-light">EE 405 Final Year Project — documenting the 15-week development of a PV Integrated EV Charging System at the University of Peradeniya.</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="text-white mb-4">Quick Links</h3>
+                    <div class="d-flex flex-column">
+                        <a href="index.html" class="mb-2"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                        <a href="#weekly" class="mb-2"><i class="bi bi-arrow-right text-primary me-2"></i>Weekly Log</a>
+                        <a href="#specs" class="mb-2"><i class="bi bi-arrow-right text-primary me-2"></i>Specifications</a>
+                        <a href="contact.html" class="mb-2"><i class="bi bi-arrow-right text-primary me-2"></i>Contact</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="text-white mb-4">Contact</h3>
+                    <p class="text-light"><i class="fa fa-university me-3 text-primary"></i>University of Peradeniya, Sri Lanka</p>
+                    <p class="text-light"><i class="fa fa-envelope me-3 text-primary"></i>e21060@eng.pdn.ac.lk</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-square me-2 rounded-circle" href="https://github.com/yourusername"><i class="fab fa-github"></i></a>
+                        <a class="btn btn-outline-light btn-square me-2 rounded-circle" href="https://linkedin.com/in/yourprofile"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-12 text-center text-light py-3">
+                        EE 405 FYP &copy; 2025 | University of Peradeniya | Template adapted from <a href="https://htmlcodex.com" class="text-primary">HTMLCodex</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

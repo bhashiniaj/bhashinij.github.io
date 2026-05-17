@@ -1,0 +1,142 @@
+/********** Template CSS - FYP Portfolio Edition **********/
+:root {
+    --primary: #0d6efd;
+    --secondary: #0b5ed7;
+    --light: #e8f0ff;
+    --dark: #091e3e;
+}
+
+/*** Spinner ***/
+.spinner { width:40px;height:40px;background:var(--primary);margin:100px auto;-webkit-animation:sk-rotateplane 1.2s infinite ease-in-out;animation:sk-rotateplane 1.2s infinite ease-in-out; }
+@keyframes sk-rotateplane{0%{transform:perspective(120px) rotateX(0deg) rotateY(0deg)}50%{transform:perspective(120px) rotateX(-180.1deg) rotateY(0deg)}100%{transform:perspective(120px) rotateX(-180deg) rotateY(-179.9deg)}}
+#spinner{opacity:0;visibility:hidden;transition:opacity .5s ease-out,visibility 0s linear .5s;z-index:99999}
+#spinner.show{transition:opacity .5s ease-out,visibility 0s linear 0s;visibility:visible;opacity:1}
+
+/*** Heading ***/
+h1,h2,.fw-bold{font-weight:800!important}
+h3,h4,.fw-semi-bold{font-weight:700!important}
+h5,h6,.fw-medium{font-weight:600!important}
+
+/*** Button ***/
+.btn{font-family:'Nunito',sans-serif;font-weight:600;transition:.5s}
+.btn-primary,.btn-secondary{color:#fff;box-shadow:inset 0 0 0 50px transparent}
+.btn-primary:hover{box-shadow:inset 0 0 0 0 var(--primary)}
+.btn-secondary:hover{box-shadow:inset 0 0 0 0 var(--secondary)}
+.btn-square{width:38px;height:38px;padding:0;display:flex;align-items:center;justify-content:center}
+.btn-sm-square{width:32px;height:32px;padding:0;display:flex;align-items:center;justify-content:center}
+.btn-lg-square{width:48px;height:48px;padding:0;display:flex;align-items:center;justify-content:center}
+
+/*** Navbar ***/
+.navbar-dark,.navbar{background:var(--dark)!important}
+.navbar .navbar-nav .nav-link{padding:25px 15px;color:#fff;font-weight:600;outline:none}
+.navbar .navbar-nav .nav-link:hover,.navbar .navbar-nav .nav-link.active{color:var(--primary)}
+.navbar .dropdown-toggle::after{border:none;content:"\f107";font-family:"Font Awesome 5 Free";font-weight:900;vertical-align:middle;margin-left:5px}
+@media(max-width:991.98px){.navbar .navbar-nav .nav-link{padding:10px 15px}}
+
+/*** Carousel ***/
+.carousel-caption{top:0;left:0;right:0;bottom:0;background:linear-gradient(to bottom,rgba(8,28,20,.85),rgba(8,28,20,.5));display:flex;align-items:center;justify-content:center}
+.carousel-control-prev-icon,.carousel-control-next-icon{width:3rem;height:3rem;border-radius:50%;background-color:var(--primary);border:10px solid var(--primary)}
+.carousel-item img{height:600px;object-fit:cover}
+@media(max-width:768px){.carousel-item img{height:400px}}
+
+/*** Facts ***/
+.facts .bg-primary{background:var(--primary)!important}
+
+/*** About ***/
+.about-img{position:relative;height:500px}
+.about-img img{position:absolute;width:65%;height:100%;object-fit:cover}
+.about-img img:last-child{margin-top:25%;margin-left:35%;height:75%;border:5px solid #fff}
+
+/*** Section Title ***/
+.section-title{position:relative;display:inline-block}
+.section-title::before{position:absolute;content:"";width:45px;height:2px;bottom:0;left:0;background:var(--primary)}
+.section-title::after{position:absolute;content:"";width:4px;height:4px;bottom:-1px;left:47px;background:#000}
+.section-title.text-center::before{left:50%;margin-left:-25px}
+.section-title.text-center::after{left:50%;margin-left:1px}
+
+/*** Team ***/
+.team-item{transition:.5s;border:none}
+.team-item:hover{margin-top:-10px}
+.team-item img{border-radius:50%;width:120px;height:120px;object-fit:cover;object-position:top;border:4px solid var(--primary);margin:0 auto;display:block}
+
+/*** Week Cards ***/
+.week-card{border:none;border-radius:10px;transition:.3s;overflow:hidden}
+.week-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,.15)!important}
+.week-card .card-body{padding:1.25rem}
+.week-badge{font-size:.75rem;padding:.3em .7em;border-radius:20px;font-weight:600}
+.badge-done{background:#dce8ff;color:#0d6efd}
+.badge-upcoming{background:#f0f0f0;color:#888}
+.badge-active{background:#d0e8ff;color:#0066cc}
+.phase-header{font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--primary);border-left:4px solid var(--primary);padding-left:10px;margin:2rem 0 1rem}
+
+/*** Week Page ***/
+.week-meta-box{border-left:4px solid var(--primary);background:#e8f0ff;padding:1.2rem 1.5rem;border-radius:0 8px 8px 0;margin-bottom:1.5rem}
+.week-meta-box p{margin:.25rem 0;font-size:.9rem}
+.deliverable-item{padding:.6rem 0;border-bottom:1px solid #e8e8e8}
+.deliverable-item:last-child{border-bottom:none}
+.img-placeholder{background:#f5f5f5;border:2px dashed #ccc;border-radius:8px;padding:2rem;text-align:center;color:#999;font-size:.85rem;margin:1.5rem 0}
+
+/*** Footer ***/
+.footer{background:var(--dark)}
+.footer .btn[class*=btn-]{width:38px;height:38px;display:inline-flex;align-items:center;justify-content:center;padding:0;border-radius:38px}
+.footer a{color:#aaa;text-decoration:none}
+.footer a:hover{color:var(--primary)}
+
+/*** Scrollbar ***/
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#f1f1f1}
+::-webkit-scrollbar-thumb{background:var(--primary);border-radius:4px}
+
+/*** Responsive ***/
+@media(max-width:576px){.about-img{height:350px}}
+
+/*** Back to Top ***/
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+    width: 44px;
+    height: 44px;
+}
+
+/*** Navbar Sticky ***/
+.sticky-top.navbar {
+    top: 0;
+    background: var(--dark) !important;
+}
+
+/*** Service Item ***/
+.service-item {
+    box-shadow: 0 0 30px rgba(0,0,0,.08);
+    transition: .5s;
+}
+.service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 40px rgba(0,0,0,.15);
+}
+
+/*** Tables ***/
+.table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.table-hover tbody tr:hover {
+    background-color: #e8f0ff;
+}
+
+/*** Footer ***/
+.footer {
+    background: var(--dark);
+    color: #aaa;
+}
+.footer .copyright {
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/*** Page header hero background ***/
+.page-hero {
+    background: linear-gradient(135deg, #091e3e 0%, #0a2d6e 100%);
+}
