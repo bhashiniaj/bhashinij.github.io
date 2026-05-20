@@ -14,9 +14,13 @@
 </head>
 <body>
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"><div class="spinner"></div></div>
+
+    <!-- Topbar -->
     <div class="container-fluid bg-dark px-5 d-none d-lg-block">
         <div class="row gx-0"><div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0"><div class="d-inline-flex align-items-center" style="height:45px;"><small class="me-3 text-light"><i class="fa fa-university me-2"></i>University of Peradeniya, Sri Lanka</small></div></div></div>
     </div>
+
+    <!-- Navbar -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
             <a href="index.html" class="navbar-brand p-0"><h1 class="m-0 text-white"><i class="fa fa-solar-panel me-2" style="color:#0d6efd"></i>PV-EV FYP</h1></a>
@@ -49,7 +53,7 @@
                 <h1 class="mb-0">Week 3: Literature Review Report Finalised &amp; Submitted</h1>
             </div>
 
-            <!-- Meta box -->
+            <!-- Meta -->
             <div class="week-meta-box mb-4">
                 <p><strong>Phase:</strong> Phase 1 — Literature Review &amp; Planning</p>
                 <p><strong>Status:</strong> ✅ Complete</p>
@@ -63,73 +67,89 @@
                     <h4 class="text-primary mb-3"><i class="fa fa-tasks me-2"></i>What We Did This Week</h4>
                     <ul class="list-unstyled">
                         <li class="deliverable-item py-2">Compiled all Week 1 and Week 2 findings into the formal <strong>Literature Review Report</strong>.</li>
-                        <li class="deliverable-item py-2">Report sections covered: system integration, battery selection, range anxiety analysis, PV panel selection, MPPT design, daily energy calculations, and boost converter parametric design.</li>
-                        <li class="deliverable-item py-2">Presented the complete system block diagram: PV → MPPT → Boost Converter → Supercapacitor Buffer → 48V LiFePO₄ → EV Drive.</li>
-                        <li class="deliverable-item py-2">Delivered the <strong>project presentation</strong> to Dr. Binduhewa — received feedback on report structure and calculation presentation.</li>
-                        <li class="deliverable-item py-2">Updated the report based on supervisor feedback and submitted the final version.</li>
-                        <li class="deliverable-item py-2">Finalised the <strong>15-week project Gantt chart</strong> covering all phases from literature review through to final hardware submission.</li>
+                        <li class="deliverable-item py-2">Report covered: system integration, battery selection, range anxiety, PV panel selection, MPPT design, daily energy calculations, and boost converter parametric design.</li>
+                        <li class="deliverable-item py-2">Presented the full system block diagram: PV → MPPT → Boost Converter → Supercapacitor Buffer → 48V LiFePO₄ → EV Drive.</li>
+                        <li class="deliverable-item py-2">Delivered the <strong>project presentation</strong> to Dr. Binduhewa and received feedback on report structure.</li>
+                        <li class="deliverable-item py-2">Updated the report with supervisor feedback and submitted the final version.</li>
+                        <li class="deliverable-item py-2">Finalised the <strong>15-week Gantt chart</strong> covering all project phases.</li>
                     </ul>
 
-                    <!-- Gantt Chart -->
-                    <h4 class="text-primary mb-3 mt-5"><i class="fa fa-calendar-alt me-2"></i>Project Gantt Chart</h4>
-                    <p class="text-muted mb-3">15-week project timeline covering all phases of development.</p>
-                    
-                    <img src="img/gantt-chart.jpg" class="img-fluid rounded shadow-sm" alt="Project Gantt Chart">
+                    <!-- ===== GANTT CHART ===== -->
+                    <h4 class="text-primary mb-2 mt-5"><i class="fa fa-calendar-alt me-2"></i>Project Gantt Chart</h4>
+                    <p class="text-muted mb-3">15-week project timeline covering all phases from literature review to final hardware submission.</p>
+                    <img src="img/gantt-chart.jpg" class="img-fluid rounded shadow-sm w-100" alt="Project Gantt Chart">
 
-                    <!-- Deliverables Download Section -->
-                    <h4 class="text-primary mb-3 mt-5"><i class="fa fa-file-download me-2"></i>Week 3 Deliverables</h4>
-
-                    <div class="row g-3">
-
-                        <!-- Report Card -->
-                        <div class="col-md-6">
-                            <div class="card border-0 shadow-sm h-100">
-                                <div class="card-body text-center p-4">
-                                    <div class="bg-primary d-inline-flex align-items-center justify-content-center rounded mb-3" style="width:60px;height:60px;">
-                                        <i class="fa fa-file-pdf text-white fa-2x"></i>
-                                    </div>
-                                    <h5 class="card-title">Literature Review Report</h5>
-                                    <p class="text-muted small mb-3">Weeks 1–2 findings: battery selection, PV sizing, MPPT, boost converter design calculations.</p>
-                                    <!-- REPLACE href below with your actual PDF file name after uploading to img/ folder -->
-                                    <!-- Upload your report PDF as: files/literature-review-report.pdf -->
-                                    <a href="files/literature-review-report.pdf" class="btn btn-primary w-100" target="_blank">
-                                        <i class="fa fa-download me-2"></i>Download Report (PDF)
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Presentation Card -->
-                        <div class="col-md-6">
-                            <div class="card border-0 shadow-sm h-100">
-                                <div class="card-body text-center p-4">
-                                    <div class="bg-primary d-inline-flex align-items-center justify-content-center rounded mb-3" style="width:60px;height:60px;">
-                                        <i class="fa fa-file-powerpoint text-white fa-2x"></i>
-                                    </div>
-                                    <h5 class="card-title">Project Presentation</h5>
-                                    <p class="text-muted small mb-3">Slides covering the full PV-EV system architecture and design choices.</p>
-                                    <!-- REPLACE href below with your actual PDF file name after uploading -->
-                                    <!-- Upload your presentation as: files/week3-presentation.pdf -->
-                                    <a href="files/week3-presentation.pdf" class="btn btn-outline-primary w-100" target="_blank">
-                                        <i class="fa fa-download me-2"></i>Download Slides (PDF)
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
+                    <!-- ===== LITERATURE REVIEW REPORT — EMBEDDED PDF ===== -->
+                    <h4 class="text-primary mb-2 mt-5"><i class="fa fa-file-pdf me-2"></i>Literature Review Report</h4>
+                    <p class="text-muted mb-3">Full report covering Weeks 1 &amp; 2 — battery selection, PV sizing, MPPT design, and boost converter calculations.</p>
+                    <div class="ratio" style="--bs-aspect-ratio: 75%;">
+                        <iframe src="files/literature-review-report.pdf" style="width:100%; height:100%; border:1px solid #dee2e6; border-radius:8px;" allowfullscreen></iframe>
                     </div>
+                    <div class="mt-2 text-end">
+                        <a href="files/literature-review-report.pdf" download class="btn btn-sm btn-outline-primary">
+                            <i class="fa fa-download me-1"></i> Download Report PDF
+                        </a>
+                    </div>
+
+                    <!-- ===== PRESENTATION — EMBEDDED PDF ===== -->
+                    <h4 class="text-primary mb-2 mt-5"><i class="fa fa-file-powerpoint me-2"></i>Project Presentation</h4>
+                    <p class="text-muted mb-3">Slides presented to Dr. Binduhewa — covering the full system architecture, design choices, and calculations.</p>
+                    <div class="ratio" style="--bs-aspect-ratio: 75%;">
+                        <iframe src="files/week3-presentation.pdf" style="width:100%; height:100%; border:1px solid #dee2e6; border-radius:8px;" allowfullscreen></iframe>
+                    </div>
+                    <div class="mt-2 text-end">
+                        <a href="files/week3-presentation.pdf" download class="btn btn-sm btn-outline-primary">
+                            <i class="fa fa-download me-1"></i> Download Slides PDF
+                        </a>
+                    </div>
+
+                    <!-- ===== REFERENCES ===== -->
+                    <h4 class="text-primary mb-3 mt-5"><i class="fa fa-book me-2"></i>References</h4>
+                    <p class="text-muted small mb-3">Research papers referred to during Weeks 1 &amp; 2 literature review.</p>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item border-0 px-0 py-2" style="background:transparent;">
+                            <div class="ms-2">
+                                cntepower, <em>"Battery Storage Price per kWh 2026: Full-Scenario Cost Analysis &amp; Forecast,"</em> cntepower, Mar. 2026.
+                                <a href="https://en.cntepower.com/batterystorage-price-per-kwh-2026-full%e2%80%91scenario-cost-analysis-forecast/" target="_blank" class="ms-2 btn btn-sm btn-outline-secondary py-0 px-2" style="font-size:.75rem;">🔗 View</a>
+                            </div>
+                        </li>
+                        <li class="list-group-item border-0 px-0 py-2" style="background:transparent;">
+                            <div class="ms-2">
+                                G. Eragamreddy and S. G. Naik, <em>"Optimizing Electric Vehicle Range through Integrating Rooftop Solar on Vehicle,"</em> International Journal of Electrical and Electronics Research, vol. 12, no. 1, pp. 66–72, Feb. 2024.
+                                <a href="https://doi.org/10.37391/ijeer.120111" target="_blank" class="ms-2 btn btn-sm btn-outline-secondary py-0 px-2" style="font-size:.75rem;">🔗 DOI</a>
+                            </div>
+                        </li>
+                        <li class="list-group-item border-0 px-0 py-2" style="background:transparent;">
+                            <div class="ms-2">
+                                Ahmad, A. Odat, and A. Bashaireh, <em>"A Novel PV Maximum Power Point Tracking Based on Solar Irradiance and Circuit Parameters Estimation,"</em> Sustainability, vol. 14, no. 13, pp. 7699–7699, Jun. 2022.
+                                <a href="https://doi.org/10.3390/su14137699" target="_blank" class="ms-2 btn btn-sm btn-outline-secondary py-0 px-2" style="font-size:.75rem;">🔗 DOI</a>
+                            </div>
+                        </li>
+                        <li class="list-group-item border-0 px-0 py-2" style="background:transparent;">
+                            <div class="ms-2">
+                                A. Trivedi, V. Trivedi, and M. Gharib, <em>"Choosing The Right Photovoltaic Panel for Electric Vehicles: An Integrated Decision Support Model,"</em> E3S Web of Conferences, vol. 455, p. 02016, 2023.
+                                <a href="https://doi.org/10.1051/e3sconf/202345502016" target="_blank" class="ms-2 btn btn-sm btn-outline-secondary py-0 px-2" style="font-size:.75rem;">🔗 DOI</a>
+                            </div>
+                        </li>
+                        <li class="list-group-item border-0 px-0 py-2" style="background:transparent;">
+                            <div class="ms-2">
+                                A. R. Bhatti, Z. Salam, M. J. B. A. Aziz, K. P. Yee, and R. H. Ashique, <em>"Electric vehicles charging using photovoltaic: Status and technological review,"</em> Renewable and Sustainable Energy Reviews, vol. 54, pp. 34–47, Feb. 2016.
+                                <a href="https://doi.org/10.1016/j.rser.2015.09.091" target="_blank" class="ms-2 btn btn-sm btn-outline-secondary py-0 px-2" style="font-size:.75rem;">🔗 DOI</a>
+                            </div>
+                        </li>
+                    </ol>
 
                     <!-- Challenges -->
                     <h4 class="text-primary mb-3 mt-5"><i class="fa fa-exclamation-circle me-2"></i>Challenges &amp; Solutions</h4>
-                    <p>Structuring the report clearly was the main challenge — a lot of technical content (converter equations) needed to be presented alongside conceptual content. Solved by using clear sections, tables, and labelled equations.</p>
+                    <p>Structuring the report clearly was the main challenge — a lot of technical content (converter equations) needed to sit alongside conceptual content. Solved by using clearly labelled sections, summary tables, and numbered equations.</p>
 
                     <!-- Next week -->
                     <h4 class="text-primary mb-3 mt-4"><i class="fa fa-forward me-2"></i>Plan for Next Week</h4>
-                    <p>Begin Phase 2: start building the irradiance measurement sensor prototype for real-world outdoor testing in Sri Lanka's climate conditions.</p>
+                    <p>Begin Phase 2: build the irradiance and temperature measurement sensor prototype for real-world outdoor testing in Sri Lanka's climate conditions.</p>
 
                 </div>
 
-                <!-- Side Nav -->
+                <!-- Sidebar -->
                 <div class="col-lg-4">
                     <div class="bg-light rounded p-4 sticky-top" style="top:80px;">
                         <h5 class="text-primary mb-3">Quick Navigation</h5>
@@ -160,10 +180,12 @@
                 <a href="index.html#weekly" class="btn btn-outline-secondary">📋 All Weeks</a>
                 <a href="week4.html" class="btn btn-primary">Week 4 &rarr;</a>
             </div>
+
         </div>
     </div>
 
-    <div class="container-fluid footer pt-4 wow fadeIn">
+    <!-- Footer -->
+    <div class="container-fluid footer pt-4">
         <div class="container"><div class="copyright"><div class="row"><div class="col-12 text-center text-light py-3">EE 405 FYP &copy; 2025 | University of Peradeniya | <a href="index.html" class="text-primary">Back to Home</a></div></div></div></div>
     </div>
     <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
