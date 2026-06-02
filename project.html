@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Project Details | PV Integrated EV Charging System | University of Peradeniya</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a3a5c;
+            --accent: #2d7dd2;
+            --accent-light: #e8f1fb;
+            --gold: #c9a84c;
+            --text: #1e2530;
+            --muted: #6b7a8d;
+            --border: #dde3ec;
+            --bg: #f7f9fc;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); }
+
+        /* ── Topbar ── */
+        .topbar {
+            background: var(--primary);
+            padding: 10px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .topbar-left { color: rgba(255,255,255,.75); font-size: .82rem; display: flex; gap: 24px; }
+        .topbar-left span { display: flex; align-items: center; gap: 7px; }
+        .topbar-left i { color: var(--gold); }
+        .topbar-right { display: flex; gap: 8px; }
+        .topbar-right a {
+            color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.25); border-radius: 50%;
+            width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
+            font-size: .8rem; transition: all .2s; text-decoration: none;
+        }
+        .topbar-right a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+        /* ── Navbar ── */
+        nav {
+            background: var(--white); border-bottom: 1px solid var(--border);
+            padding: 0 40px; display: flex; align-items: center; justify-content: space-between;
+            position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.06);
+        }
+        .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; padding: 16px 0; }
+        .nav-brand-icon { width: 38px; height: 38px; background: var(--primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        .nav-brand-icon i { color: var(--gold); font-size: .95rem; }
+        .nav-brand-text { line-height: 1.2; }
+        .nav-brand-text .line1 { font-size: .7rem; color: var(--muted); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
+        .nav-brand-text .line2 { font-size: .92rem; color: var(--primary); font-weight: 700; letter-spacing: .02em; }
+        .nav-links { display: flex; gap: 4px; list-style: none; }
+        .nav-links a {
+            text-decoration: none; color: var(--muted); font-size: .88rem; font-weight: 500;
+            padding: 8px 14px; border-radius: 6px; transition: all .2s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); background: var(--accent-light); }
+        .nav-links a.active { color: var(--accent); font-weight: 600; }
+        .nav-cta { background: var(--accent); color: #fff !important; padding: 8px 18px !important; border-radius: 6px !important; }
+        .nav-cta:hover { background: var(--primary) !important; color: #fff !important; }
+
+        /* ── Page Header ── */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f2540 100%);
+            padding: 56px 40px;
+        }
+        .page-header-inner { max-width: 1100px; margin: 0 auto; }
+        .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+        .breadcrumb a { color: rgba(255,255,255,.5); font-size: .82rem; text-decoration: none; transition: color .2s; }
+        .breadcrumb a:hover { color: rgba(255,255,255,.85); }
+        .breadcrumb span { color: rgba(255,255,255,.3); font-size: .82rem; }
+        .breadcrumb .current { color: var(--gold); font-size: .82rem; }
+        .page-header h1 { font-family: 'Lora', serif; font-size: 2.2rem; color: #fff; font-weight: 700; margin-bottom: 10px; }
+        .page-header p { color: rgba(255,255,255,.6); font-size: .95rem; }
+        .page-tabs {
+            max-width: 1100px; margin: 0 auto;
+            display: flex; gap: 4px; margin-top: 28px;
+        }
+        .page-tab {
+            padding: 9px 20px; border-radius: 6px 6px 0 0;
+            font-size: .85rem; font-weight: 600;
+            cursor: pointer; border: none;
+            background: rgba(255,255,255,.08); color: rgba(255,255,255,.6);
+            transition: all .2s;
+        }
+        .page-tab.active { background: var(--bg); color: var(--primary); }
+        .page-tab:hover:not(.active) { background: rgba(255,255,255,.13); color: rgba(255,255,255,.9); }
+
+        /* ── Content tabs ── */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* ── Section wrapper ── */
+        .section { padding: 60px 40px; }
+        .section-inner { max-width: 1100px; margin: 0 auto; }
+        .section-alt { background: var(--white); }
+        .section-label { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+        .section-title { font-family: 'Lora', serif; font-size: 1.75rem; color: var(--primary); font-weight: 700; margin-bottom: 12px; }
+        .section-divider { width: 40px; height: 3px; background: linear-gradient(90deg, var(--accent), var(--gold)); border-radius: 2px; margin-bottom: 32px; }
+
+        /* ── Objectives ── */
+        .obj-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+        .obj-card {
+            background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+            padding: 32px 24px; border-top: 3px solid var(--accent);
+        }
+        .obj-icon {
+            width: 52px; height: 52px; background: var(--accent-light); border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 18px;
+        }
+        .obj-icon i { color: var(--accent); font-size: 1.2rem; }
+        .obj-card h4 { font-size: .98rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+        .obj-card p { font-size: .87rem; line-height: 1.7; color: var(--muted); }
+
+        /* ── Weekly log ── */
+        .phase-label {
+            display: flex; align-items: center; gap: 10px;
+            font-size: .82rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+            color: var(--primary); margin: 32px 0 16px;
+            padding-bottom: 10px; border-bottom: 1px solid var(--border);
+        }
+        .phase-label .phase-badge {
+            background: var(--primary); color: #fff;
+            font-size: .72rem; padding: 3px 10px; border-radius: 20px;
+        }
+        .weeks-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+        .week-card {
+            background: var(--white); border: 1px solid var(--border); border-radius: 10px;
+            padding: 20px; text-decoration: none; color: inherit;
+            transition: box-shadow .2s, transform .2s, border-color .2s;
+            display: block;
+        }
+        .week-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.08); transform: translateY(-2px); border-color: var(--accent); }
+        .week-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+        .week-num { font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+        .badge-done { background: #e6f7ee; color: #1a8a4a; font-size: .72rem; font-weight: 700; padding: 3px 9px; border-radius: 20px; }
+        .badge-upcoming { background: #fff4e0; color: #b07d00; font-size: .72rem; font-weight: 700; padding: 3px 9px; border-radius: 20px; }
+        .week-card h6 { font-size: .88rem; font-weight: 700; color: var(--primary); margin-bottom: 6px; line-height: 1.4; }
+        .week-card p { font-size: .8rem; color: var(--muted); line-height: 1.5; }
+
+        /* ── Specs ── */
+        .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .spec-table-wrap h5 { font-size: .9rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+        .spec-table-wrap h5 i { color: var(--accent); }
+        table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+        thead th { background: var(--primary); color: var(--gold); font-weight: 700; padding: 10px 14px; font-size: .78rem; letter-spacing: .05em; text-transform: uppercase; }
+        tbody tr { border-bottom: 1px solid var(--border); }
+        tbody tr:last-child { border-bottom: none; }
+        tbody td, tbody th { padding: 10px 14px; }
+        tbody th { font-weight: 600; color: var(--primary); background: #f2f6fb; width: 45%; }
+        tbody td { color: #3d4a5c; }
+        tbody tr:hover td, tbody tr:hover th { background: var(--accent-light); }
+
+        /* ── Footer ── */
+        footer { background: var(--primary); padding: 40px; }
+        .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; }
+        footer h4 { color: var(--gold); font-size: .85rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 14px; }
+        footer p, footer a { color: rgba(255,255,255,.6); font-size: .85rem; line-height: 1.7; text-decoration: none; }
+        footer a:hover { color: #fff; }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .footer-links a { display: flex; align-items: center; gap: 8px; }
+        .footer-links i { color: var(--accent); font-size: .75rem; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); margin-top: 32px; padding-top: 20px; text-align: center; color: rgba(255,255,255,.35); font-size: .8rem; max-width: 1100px; margin-left: auto; margin-right: auto; }
+        .social-links { display: flex; gap: 8px; margin-top: 14px; }
+        .social-links a { width: 32px; height: 32px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.6); font-size: .8rem; text-decoration: none; transition: all .2s; }
+        .social-links a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+        @media(max-width:900px) {
+            .obj-grid, .weeks-grid, .specs-grid { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr; }
+            nav { padding: 0 20px; }
+            .topbar { display: none; }
+            .page-tabs { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+    <div class="topbar-left">
+        <span><i class="fa fa-university"></i> Faculty of Engineering, University of Peradeniya</span>
+        <span><i class="fa fa-envelope"></i> e21060@eng.pdn.ac.lk</span>
+    </div>
+    <div class="topbar-right">
+        <a href="https://github.com/bhashiniaj" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/bhashini-jagodage-730a7b389/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</div>
+
+<!-- Navbar -->
+<nav>
+    <a href="index.html" class="nav-brand">
+        <div class="nav-brand-icon"><i class="fa fa-solar-panel"></i></div>
+        <div class="nav-brand-text">
+            <div class="line1">FYP Portfolio</div>
+            <div class="line2">PV–EV System</div>
+        </div>
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="project.html" class="active">Project</a></li>
+        <li><a href="index.html#team">Team</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Page Header with Tabs -->
+<div class="page-header">
+    <div class="page-header-inner">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span class="current">Project</span>
+        </div>
+        <h1>PV Integrated EV Charging System</h1>
+        <p>Department of Electrical &amp; Electronic Engineering &nbsp;·&nbsp; University of Peradeniya &nbsp;·&nbsp; EE 405 / EE 406</p>
+    </div>
+    <div class="page-tabs">
+        <button class="page-tab active" onclick="showTab('overview')">Overview</button>
+        <button class="page-tab" onclick="showTab('weekly')">Weekly Log</button>
+        <button class="page-tab" onclick="showTab('specs')">Specifications</button>
+    </div>
+</div>
+
+<!-- ═══ TAB: OVERVIEW ═══ -->
+<div id="tab-overview" class="tab-content active">
+
+    <!-- Carousel -->
+    <div style="position:relative;background:#000;">
+        <div id="projCarousel" style="position:relative;overflow:hidden;height:420px;">
+            <div class="proj-slide" style="position:absolute;inset:0;opacity:1;transition:opacity .7s;">
+                <img src="img/solar-ev.jpg" alt="PV EV System" style="width:100%;height:100%;object-fit:cover;opacity:.7;">
+                <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;">
+                    <p style="color:rgba(255,255,255,.8);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;">Final Year Project</p>
+                    <h2 style="font-family:'Lora',serif;font-size:2rem;color:#fff;font-weight:700;max-width:600px;line-height:1.3;">PV Integrated EV Charging System</h2>
+                    <p style="color:rgba(255,255,255,.65);margin-top:12px;font-size:.9rem;">Dept. of Electrical &amp; Electronic Engineering &nbsp;|&nbsp; University of Peradeniya</p>
+                </div>
+            </div>
+            <div class="proj-slide" style="position:absolute;inset:0;opacity:0;transition:opacity .7s;">
+                <img src="img/coverpage.jpg" alt="Engineering" style="width:100%;height:100%;object-fit:cover;opacity:.7;">
+                <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;">
+                    <p style="color:rgba(255,255,255,.8);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;">Solar Energy &amp; Smart Charging</p>
+                    <h2 style="font-family:'Lora',serif;font-size:2rem;color:#fff;font-weight:700;max-width:600px;line-height:1.3;">Clean Energy for Electric Vehicles</h2>
+                    <p style="color:rgba(255,255,255,.65);margin-top:12px;font-size:.9rem;">48V LiFePO₄ Battery &nbsp;|&nbsp; MPPT Boost Converter &nbsp;|&nbsp; Supercapacitor Buffer</p>
+                </div>
+            </div>
+        </div>
+        <button onclick="moveSlide(-1)" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;font-size:1rem;cursor:pointer;">&#8249;</button>
+        <button onclick="moveSlide(1)" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;font-size:1rem;cursor:pointer;">&#8250;</button>
+    </div>
+
+    <!-- Project Overview -->
+    <section class="section section-alt">
+        <div class="section-inner">
+            <div class="section-label">Project Overview</div>
+            <h2 class="section-title">About the Project</h2>
+            <div class="section-divider"></div>
+            <div style="display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start;">
+                <div>
+                    <p style="font-size:.95rem;line-height:1.85;color:#3d4a5c;margin-bottom:16px;">
+                        This Final Year Project addresses the design and prototype implementation of a photovoltaic (PV) integrated electric vehicle (EV) charging system, with specific application to light EVs — including e-bicycles and electric three-wheelers — in the Sri Lankan energy context.
+                    </p>
+                    <p style="font-size:.95rem;line-height:1.85;color:#3d4a5c;margin-bottom:16px;">
+                        The system integrates a 300 W flexible mono-crystalline silicon PV array, a custom-designed non-isolated DC–DC boost converter employing Maximum Power Point Tracking (MPPT), an EDLC supercapacitor transient buffer, and a 48 V LiFePO₄ battery pack. The Perturb &amp; Observe (P&amp;O) algorithm is implemented for MPPT, with the converter designed to step up the PV output voltage (18–36 V) to a stable 48 V DC bus.
+                    </p>
+                    <p style="font-size:.95rem;line-height:1.85;color:#3d4a5c;">
+                        The incorporation of a supercapacitor buffer serves to absorb transient current demands, thereby reducing peak stress on the battery cells and contributing to an estimated 20–30% improvement in battery cycle life. The full system is designed and validated through simulation in MATLAB/Simulink prior to hardware realisation.
+                    </p>
+                </div>
+                <div style="background:var(--primary);border-radius:12px;overflow:hidden;">
+                    <img src="img/solar-ev.jpg" alt="PV EV System" style="width:100%;height:200px;object-fit:cover;display:block;opacity:.85;">
+                    <div style="padding:20px;">
+                        <p style="font-size:.75rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Key Outcomes</p>
+                        <div style="display:flex;flex-direction:column;gap:8px;">
+                            <div style="display:flex;justify-content:space-between;font-size:.84rem;"><span style="color:rgba(255,255,255,.6);">Daily Energy Yield</span><span style="color:#fff;font-weight:600;">1.5 kWh/day</span></div>
+                            <div style="display:flex;justify-content:space-between;font-size:.84rem;"><span style="color:rgba(255,255,255,.6);">Added EV Range</span><span style="color:#fff;font-weight:600;">~18.75 km/day</span></div>
+                            <div style="display:flex;justify-content:space-between;font-size:.84rem;"><span style="color:rgba(255,255,255,.6);">Converter Efficiency</span><span style="color:#fff;font-weight:600;">90 – 95%</span></div>
+                            <div style="display:flex;justify-content:space-between;font-size:.84rem;"><span style="color:rgba(255,255,255,.6);">Battery Life Improvement</span><span style="color:#fff;font-weight:600;">+20 – 30%</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objectives -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-label">Design Objectives</div>
+            <h2 class="section-title">Project Objectives</h2>
+            <div class="section-divider"></div>
+            <div class="obj-grid">
+                <div class="obj-card">
+                    <div class="obj-icon"><i class="fa fa-sun"></i></div>
+                    <h4>Solar Energy Harvesting</h4>
+                    <p>Design a 1.5 m² flexible mono-crystalline silicon PV array (300 W, 20% efficiency) with MPPT to harvest approximately 1.5 kWh per day under Sri Lanka's five peak sun hours, providing an estimated 18.75 km of additional daily EV range.</p>
+                </div>
+                <div class="obj-card" style="border-top-color:var(--gold);">
+                    <div class="obj-icon" style="background:#fff8e6;"><i class="fa fa-bolt" style="color:var(--gold);"></i></div>
+                    <h4>DC–DC Power Conversion</h4>
+                    <p>Design and implement a non-isolated boost converter (L = 45 µH, C = 163 µF, f<sub>sw</sub> = 20 kHz) capable of stepping up the PV terminal voltage (18–36 V) to a regulated 48 V DC bus with an estimated efficiency of 90–95%.</p>
+                </div>
+                <div class="obj-card" style="border-top-color:#38b27a;">
+                    <div class="obj-icon" style="background:#e8f7f0;"><i class="fa fa-battery-three-quarters" style="color:#38b27a;"></i></div>
+                    <h4>Battery Management &amp; Buffering</h4>
+                    <p>Integrate a 48 V LiFePO₄ battery pack (15S configuration, 6 Ah, 288 Wh) with an EDLC supercapacitor transient buffer to absorb peak current demands, reduce battery stress, and extend operational cycle life by an estimated 20–30%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- ═══ TAB: WEEKLY LOG ═══ -->
+<div id="tab-weekly" class="tab-content">
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-label">Progress Tracker</div>
+            <h2 class="section-title">15-Week Development Log</h2>
+            <div class="section-divider"></div>
+
+            <!-- Phase 1 -->
+            <div class="phase-label">
+                <span class="phase-badge">Phase 1</span>
+                Literature Review &amp; Planning &nbsp;—&nbsp; Weeks 1–3
+            </div>
+            <div class="weeks-grid">
+                <a href="week1.html" class="week-card">
+                    <div class="week-header">
+                        <span class="week-num">Week 1</span>
+                        <span class="badge-done">✔ Complete</span>
+                    </div>
+                    <h6>System Architecture, Battery Study &amp; Range Anxiety</h6>
+                    <p>LiFePO₄ cell selection rationale, supercapacitor buffering strategy, and overall system block diagram.</p>
+                </a>
+                <a href="week2.html" class="week-card">
+                    <div class="week-header">
+                        <span class="week-num">Week 2</span>
+                        <span class="badge-done">✔ Complete</span>
+                    </div>
+                    <h6>PV Panel Selection, MPPT &amp; Boost Converter Design</h6>
+                    <p>300 W mono-Si panel selection, P&amp;O MPPT algorithm study, and full parametric converter calculations.</p>
+                </a>
+                <a href="week3.html" class="week-card">
+                    <div class="week-header">
+                        <span class="week-num">Week 3</span>
+                        <span class="badge-done">✔ Complete</span>
+                    </div>
+                    <h6>Literature Review Report — Finalised &amp; Submitted</h6>
+                    <p>Complete report compiled, reviewed with supervisor, and formally submitted.</p>
+                </a>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="phase-label" style="margin-top:40px;">
+                <span class="phase-badge">Phase 2</span>
+                Sensor Development &amp; Simulation &nbsp;—&nbsp; Weeks 4–10
+            </div>
+            <div class="weeks-grid">
+                <a href="week4.html" class="week-card">
+                    <div class="week-header"><span class="week-num">Week 4</span><span class="badge-done">✔ Complete</span></div>
+                    <h6>Irradiance Meter — Functional Prototype</h6>
+                    <p>Construction and initial testing of the irradiance and ambient temperature sensor unit.</p>
+                </a>
+                <a href="week5.html" class="week-card">
+                    <div class="week-header"><span class="week-num">Week 5</span><span class="badge-done">✔ Complete</span></div>
+                    <h6>PV System Prototype Design Calculations</h6>
+                    <p>PV panel modelling; simulation of I–V and P–V characteristic curves at varying irradiance levels.</p>
+                </a>
+                <a href="week6.html" class="week-card">
+                    <div class="week-header"><span class="week-num">Week 6</span><span class="badge-upcoming">⏳ Upcoming</span></div>
+                    <h6>Testing Enclosure — Incandescent Lamp Array</h6>
+                    <p>Construction of a controlled indoor illumination environment for repeatable laboratory testing.</p>
+                </a>
+                <a href="week7.html" class="week-card">
+                    <div class="week-header"><span class="week-num">Week 7</span><span class="badge-upcoming">⏳ Upcoming</span></div>
+                    <h6>Sensor Calibration &amp; Design Report</h6>
+                    <p>Calibration of irradiance and temperature sensors; documentation of calibration results and methodology.</p>
+                </a>
+                <a href="week8.html" class="week-card">
+                    <div class="week-header"><span class="week-num">Week 8</span><span class="badge-upcoming">⏳ Upcoming</span></div>
+                    <h6>MPPT Closed-Loop Simulation</h6>
+                    <p>Simulation of the complete MPPT control loop with boost converter model in MATLAB/Simulink.</p>
+                </a>
+                <a href="week9.html" class="week-card">
+                    <div class="week-header"><span class="week-num">Week 9</span><span class="badge-upcoming">⏳ Upcoming</span></div>
+                    <h6>Testing Enclosure Complete &amp; Sensor Report</h6>
+                    <p>Finalisation of the testing enclosure; submission of the sensor calibration technical report.</p>
+                </a>
+                <a href="week10.html" class="week-card">
+                    <div class="week-header"><span class="week-num">Week 10</span><span class="badge-upcoming">⏳ Upcoming</span></div>
+                    <h6>Full Simulation Validation Report</h6>
+                    <p>Compilation and submission of the comprehensive simulation validation report covering all subsystems.</p>
+                </a>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="phase-label" style="margin-top:40px;">
+                <span class="phase-badge">Phase 3</span>
+                Hardware Implementation &nbsp;—&nbsp; Weeks 11–15
+            </div>
+            <div class="weeks-grid">
+                <a href="week11.html" class="week-card">
+                    <div class="week-header"><span class="week-num">Week 11</span><span class="badge-upcoming">⏳ Upcoming</span></div>
+                    <h6>Component Procurement &amp; PCB Schematic</h6>
+                    <p>Sourcing of all required components; completion of the full circuit schematic in KiCad.</p>
+                </a>
+                <a href="week12.html" class="week-card">
+                    <div class="week-header"><span class="week-num">Week 12</span><span class="badge-upcoming">⏳ Upcoming</span></div>
+                    <h6>PCB Layout &amp; Fabrication</h6>
+                    <p>Completion of PCB layout in KiCad; submission of Gerber files to manufacturer for fabrication.</p>
+                </a>
+                <a href="week13.html" class="week-card">
+                    <div class="week-header"><span class="week-num">Week 13</span><span class="badge-upcoming">⏳ Upcoming</span></div>
+                    <h6>Hardware Assembly &amp; Initial Testing</h6>
+                    <p>Soldering and assembly of the PCB; initial power-on verification and continuity checks.</p>
+                </a>
+                <a href="week14.html" class="week-card">
+                    <div class="week-header"><span class="week-num">Week 14</span><span class="badge-upcoming">⏳ Upcoming</span></div>
+                    <h6>System Integration &amp; Performance Testing</h6>
+                    <p>Integration of all subsystems; measurement of conversion efficiency and charging performance metrics.</p>
+                </a>
+                <a href="week15.html" class="week-card">
+                    <div class="week-header"><span class="week-num">Week 15</span><span class="badge-upcoming">⏳ Upcoming</span></div>
+                    <h6>Final Prototype &amp; Report Submission</h6>
+                    <p>Completion of small-scale DC–DC converter hardware prototype; submission of the final project report.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ═══ TAB: SPECIFICATIONS ═══ -->
+<div id="tab-specs" class="tab-content">
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-label">Design Calculations</div>
+            <h2 class="section-title">System Specifications</h2>
+            <div class="section-divider"></div>
+            <div class="specs-grid">
+                <div class="spec-table-wrap">
+                    <h5><i class="fa fa-sun"></i> Photovoltaic Array &amp; Energy</h5>
+                    <table>
+                        <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+                        <tbody>
+                            <tr><th>Panel Technology</th><td>Flexible Mono-crystalline Silicon</td></tr>
+                            <tr><th>Active Area</th><td>1.5 m²</td></tr>
+                            <tr><th>Panel Efficiency</th><td>20%</td></tr>
+                            <tr><th>Peak Output Power</th><td>300 W &nbsp;<em style="font-size:.78rem;color:var(--muted);">(P = A × G × η)</em></td></tr>
+                            <tr><th>Daily Energy Yield (Sri Lanka)</th><td>1.5 kWh/day &nbsp;<em style="font-size:.78rem;color:var(--muted);">(5 peak sun hours)</em></td></tr>
+                            <tr><th>Added EV Range per Day</th><td>~18.75 km &nbsp;<em style="font-size:.78rem;color:var(--muted);">(@ 80 Wh/km)</em></td></tr>
+                            <tr><th>MPPT Algorithm</th><td>Perturb &amp; Observe (P&amp;O)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="spec-table-wrap">
+                    <h5><i class="fa fa-bolt"></i> DC–DC Converter</h5>
+                    <table>
+                        <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+                        <tbody>
+                            <tr><th>Converter Topology</th><td>Non-isolated Boost DC–DC</td></tr>
+                            <tr><th>Input Voltage Range (PV)</th><td>18 V – 36 V</td></tr>
+                            <tr><th>Output Voltage (DC Bus)</th><td>48 V</td></tr>
+                            <tr><th>Maximum Duty Cycle</th><td>62.5% &nbsp;<em style="font-size:.78rem;color:var(--muted);">(worst-case shading)</em></td></tr>
+                            <tr><th>Inductor (L<sub>min</sub>)</th><td>45 µH</td></tr>
+                            <tr><th>Output Capacitor (C<sub>out</sub>)</th><td>163 µF</td></tr>
+                            <tr><th>Switching Frequency</th><td>20 kHz</td></tr>
+                            <tr><th>Estimated Efficiency</th><td>90 – 95%</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="spec-table-wrap">
+                    <h5><i class="fa fa-battery-three-quarters"></i> Battery Pack</h5>
+                    <table>
+                        <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+                        <tbody>
+                            <tr><th>Chemistry</th><td>LiFePO₄ (Lithium Iron Phosphate)</td></tr>
+                            <tr><th>Configuration</th><td>15S (series)</td></tr>
+                            <tr><th>Nominal Voltage</th><td>48 V</td></tr>
+                            <tr><th>Capacity</th><td>6 Ah</td></tr>
+                            <tr><th>Energy Content</th><td>288 Wh</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="spec-table-wrap">
+                    <h5><i class="fa fa-microchip"></i> Supercapacitor Buffer</h5>
+                    <table>
+                        <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+                        <tbody>
+                            <tr><th>Type</th><td>EDLC (Electric Double-Layer Capacitor)</td></tr>
+                            <tr><th>Function</th><td>Transient current absorption</td></tr>
+                            <tr><th>Interface</th><td>Bidirectional DC–DC converter</td></tr>
+                            <tr><th>Battery Life Benefit</th><td>+20 – 30% estimated cycle life</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-inner">
+        <div>
+            <h4>PV–EV FYP Portfolio</h4>
+            <p>Final Year Project documentation for the PV Integrated EV Charging System developed at the Department of Electrical &amp; Electronic Engineering, University of Peradeniya.</p>
+            <div class="social-links">
+                <a href="https://github.com/bhashiniaj" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/bhashini-jagodage-730a7b389/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4>Navigation</h4>
+            <ul class="footer-links">
+                <li><a href="index.html"><i class="fa fa-chevron-right"></i> Home</a></li>
+                <li><a href="project.html"><i class="fa fa-chevron-right"></i> Project</a></li>
+                <li><a href="index.html#team"><i class="fa fa-chevron-right"></i> Team</a></li>
+                <li><a href="contact.html"><i class="fa fa-chevron-right"></i> Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <p><i class="fa fa-university" style="color:var(--accent); margin-right:8px;"></i> University of Peradeniya, Sri Lanka</p>
+            <p style="margin-top:8px;"><i class="fa fa-envelope" style="color:var(--accent); margin-right:8px;"></i> e21060@eng.pdn.ac.lk</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        EE 405 | EE 406 — Final Year Project &nbsp;·&nbsp; Faculty of Engineering, University of Peradeniya &nbsp;·&nbsp; 2026
+    </div>
+</footer>
+
+<script>
+// Carousel
+let current = 0;
+const slides = document.querySelectorAll('.proj-slide');
+function moveSlide(dir) {
+    slides[current].style.opacity = '0';
+    current = (current + dir + slides.length) % slides.length;
+    slides[current].style.opacity = '1';
+}
+if (slides.length) setInterval(() => moveSlide(1), 5000);
+
+function showTab(id) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.page-tab').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.target.classList.add('active');
+    window.scrollTo({top: document.querySelector('.page-header').offsetHeight + 60, behavior: 'smooth'});
+}
+
+// Open tab from URL hash
+const hash = window.location.hash;
+if (hash === '#weekly') showTab('weekly');
+if (hash === '#specs') showTab('specs');
+</script>
+
+</body>
+</html>
