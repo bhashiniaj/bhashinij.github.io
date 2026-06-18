@@ -36,7 +36,7 @@
         <div class="container py-4">
             <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
                 <a href="week6.html" class="btn btn-outline-primary me-2">&larr; Week 6</a>
-                <span class="week-badge badge-upcoming px-3 py-2" style="font-size:.9rem;">⏳ Upcoming &mdash; Week 7 of 15</span>
+                <span class="week-badge badge-upcoming px-3 py-2" style="font-size:.9rem;">✅ Done &mdash; Week 7 of 15</span>
                 <a href="week8.html" class="btn btn-primary">Week 8 &rarr;</a>
             </div>
             <div class="section-title position-relative pb-3 mb-4">
@@ -45,12 +45,14 @@
             </div>
             <div class="week-meta-box mb-4">
                 <p><strong>Phase:</strong> Phase 2: Sensor Development & Simulation</p>
-                <p><strong>Status:</strong> ⏳ Upcoming</p>
+                <p><strong>Status:</strong> ✅ Done</p>
             </div>
             <div class="row g-4">
                 <div class="col-lg-8">
                     <h4 class="text-primary mb-3"><i class="fa fa-tasks me-2"></i>What We Did This Week</h4>
-                    <ul class="list-unstyled"><li class="deliverable-item py-2">This week has not started yet. Check back soon for the update!</li>
+                    <ul class="list-unstyled"><li class="deliverable-item py-2">Built and ran an open-loop boost converter simulation in PSCAD, achieving the target output voltage of 48V with a duty cycle of 0.6265 at 20kHz switching frequency</li>
+                    <ul class="list-unstyled"><li class="deliverable-item py-2">Found that the output voltage was slightly off (47.6V instead of 48V) due to the simulation time step being too large, and fixed it by reducing the solution time step to 0.315µs</li>
+                    <ul class="list-unstyled"><li class="deliverable-item py-2">The inductance range for 20–30% current ripple was calculated as 1677µH to 2519µH. The inductor will be hand-wound using a toroidal ferrite core to get a value within this range.</li>
 <li class="deliverable-item py-2">Planned work will be documented here each week as the project progresses.</li></ul>
                     <div class="img-placeholder my-4">
                         📷 Add your Week 7 photo, diagram, or screenshot here.<br>
