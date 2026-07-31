@@ -38,27 +38,99 @@
 
             <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
                 <a href="week10.html" class="btn btn-outline-primary">&larr; Week 10</a>
-                <span class="week-badge badge-upcoming px-3 py-2" style="font-size:.9rem;">⏳ Upcoming &mdash; Week 11 of 15</span>
+                <span class="week-badge badge-completed px-3 py-2" style="font-size:.9rem;">✅ Completed &mdash; Week 11 of 15</span>
                 <a href="week12.html" class="btn btn-primary">Week 12 &rarr;</a>
             </div>
 
             <div class="section-title position-relative pb-3 mb-4">
                 <h5 class="fw-bold text-uppercase" style="color:var(--primary);">Phase 3: Hardware Implementation</h5>
-                <h1 class="mb-0">Week 11: Veroboard Build &amp; PCB Layout</h1>
+                <h1 class="mb-0">Week 11: Boost Converter PCB Update</h1>
+                <p class="text-muted mb-0">Arduino shield connection, sensing, protection, and layout finalization</p>
             </div>
 
             <div class="week-meta-box mb-4">
                 <p><strong>Phase:</strong> Phase 3 — Hardware Implementation</p>
-                <p><strong>Status:</strong> ⏳ Upcoming</p>
+                <p><strong>Status:</strong> ✅ Completed</p>
+                <p><strong>Author:</strong> Bhashini A.J. (E/21/060)</p>
             </div>
 
             <div class="row g-4">
                 <div class="col-lg-8">
-                    <div class="text-center py-5">
-                        <i class="fa fa-clock fa-4x text-muted mb-4"></i>
-                        <h4 class="text-muted">This week hasn't started yet</h4>
-                        <p class="text-muted">Week 11 will cover building the veroboard circuit for initial testing and starting the PCB layout in KiCad. Check back soon for the update!</p>
+
+                    <h4 class="mb-3">This Week's Changes</h4>
+                    <ul class="mb-4">
+                        <li>Switched the Arduino connection from loose wires to a shield-style plug-in design</li>
+                        <li>Replaced the load resistor with battery connection pins</li>
+                        <li>Added input voltage and current sensors for real-time monitoring</li>
+                        <li>Added a zener diode to protect the feedback signal into the Arduino ADC</li>
+                        <li>Planned physical clearance for heatsinks on the MOSFET and diode</li>
+                        <li>Positioned all 4 Arduino header connectors using exact official coordinates</li>
+                        <li>Finalized PCB layout zones and measured board dimensions</li>
+                    </ul>
+
+                    <hr class="my-4">
+
+                    <h4 class="mb-3">Arduino: Shield-Style Connection</h4>
+                    <p><strong>Why:</strong> loose jumper wires near a 20 kHz switching signal can pick up noise and interfere with each other.</p>
+                    <p><strong>Fix:</strong> the PCB now plugs directly onto the Arduino, like a shield — short, fixed connections, with no loose wires. Four header connectors (Digital High – 10-pin, Digital Low – 8-pin, Analog In – 6-pin, Power – 8-pin) were placed at exact Arduino Uno spacing, then grouped and locked together as one unit so the relative spacing can't be disturbed.</p>
+
+                    <hr class="my-4">
+
+                    <h4 class="mb-3">Voltage &amp; Current Sensing + Protection</h4>
+                    <p class="fw-bold mb-2">New sensors added</p>
+                    <ul>
+                        <li>Current sensor (ACS712) — inline between the PV panel and the inductor, feeding Arduino pin A2</li>
+                        <li>V<sub>in</sub> voltage sensor — divider tapping the PV input, feeding A1</li>
+                        <li>V<sub>out</sub> voltage sensor — existing R2/R3 divider, feeding A0</li>
+                    </ul>
+                    <p class="fw-bold mb-2">Protection added</p>
+                    <ul class="mb-4">
+                        <li>5.1 V zener diode placed between the V<sub>out</sub> feedback line and GND</li>
+                        <li>Clamps the signal into A0, protecting the Arduino's ADC from voltage spikes</li>
+                    </ul>
+
+                    <hr class="my-4">
+
+                    <h4 class="mb-3">Heatsinks &amp; Component Clearance</h4>
+                    <ul class="mb-4">
+                        <li>Heatsinks needed on Q2 (IRF540N) and D1 (MBR10100CT) — both dissipate real power at switching frequency</li>
+                        <li>Not a schematic component — purely a PCB layout and mechanical planning consideration</li>
+                        <li>Kept 15–20 mm clearance between Q2 and D1, so clip-on heatsinks don't collide</li>
+                        <li>Repositioned C1 (output capacitor) away from Q2 to avoid crowding the heatsink zone</li>
+                        <li>Insulating thermal pads planned in case both heatsinks sit close together, since TO-220 tabs can be live</li>
+                    </ul>
+
+                    <hr class="my-4">
+
+                    <h4 class="mb-3">Building the Shield-Style Connector</h4>
+                    <ul>
+                        <li>Sourced the official Arduino Uno R3 Eagle CAD files for header pin coordinates</li>
+                        <li>Placed 4 generic pin headers (Power, Analog In, Digital Low, Digital High) at the exact official spacing</li>
+                        <li>Grouped and locked the 4 headers so relative spacing can't be accidentally disturbed</li>
+                        <li>Result: the PCB plugs directly onto a real Arduino Uno, with no loose wiring needed</li>
+                    </ul>
+                    <p class="text-muted mb-4">Reference template: <a href="https://github.com/LNSD/Arduino-Shield-Template" target="_blank" rel="noopener">github.com/LNSD/Arduino-Shield-Template</a></p>
+
+                    <hr class="my-4">
+
+                    <h4 class="mb-3">PCB Layout Dimensions</h4>
+                    <p><strong>Board size:</strong> approx. 110 mm × 100 mm — sized to comfortably fit the power stage, gate drive, sensing, and header zones.</p>
+                    <div class="table-responsive mb-3">
+                        <table class="table table-bordered align-middle">
+                            <thead class="table-light">
+                                <tr><th>Clearance</th><th>Value</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Q2 to D1</td><td>15–20 mm (heatsink clearance)</td></tr>
+                                <tr><td>Gate driver (U1) to Q2 gate</td><td>under 20 mm (short gate trace)</td></tr>
+                                <tr><td>Power stage to feedback/sensing zone</td><td>25–30 mm (noise isolation)</td></tr>
+                                <tr><td>Component to board edge</td><td>2.5–4 mm minimum</td></tr>
+                                <tr><td>Header block to nearest component</td><td>20–25 mm</td></tr>
+                            </tbody>
+                        </table>
                     </div>
+                    <p class="text-muted">PCB routing is in progress — copper connections to follow in Week 12.</p>
+
                 </div>
 
                 <div class="col-lg-4">
@@ -75,7 +147,7 @@
                             <a href="week8.html" class="btn btn-sm btn-outline-secondary">Week 8</a>
                             <a href="week9.html" class="btn btn-sm btn-outline-secondary">Week 9</a>
                             <a href="week10.html" class="btn btn-sm btn-outline-secondary">Week 10</a>
-                            <a href="week11.html" class="btn btn-sm btn-primary">Week 11 ← You are here</a>
+                            <a href="week10.html" class="btn btn-sm btn-outline-secondary">Week 11</a>
                             <a href="week12.html" class="btn btn-sm btn-outline-secondary">Week 12</a>
                             <a href="week13.html" class="btn btn-sm btn-outline-secondary">Week 13</a>
                             <a href="week14.html" class="btn btn-sm btn-outline-secondary">Week 14</a>
