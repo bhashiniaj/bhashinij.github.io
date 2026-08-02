@@ -36,31 +36,36 @@
         <div class="container py-4">
             <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
                 <a href="week12.html" class="btn btn-outline-primary me-2">&larr; Week 12</a>
-                <span class="week-badge badge-upcoming px-3 py-2" style="font-size:.9rem;">⏳ Upcoming &mdash; Week 13 of 15</span>
+                <span class="week-badge badge-completed px-3 py-2" style="font-size:.9rem;">✅ Completed &mdash; Week 13 of 15</span>
                 <a href="week14.html" class="btn btn-primary">Week 14 &rarr;</a>
             </div>
             <div class="section-title position-relative pb-3 mb-4">
                 <h5 class="fw-bold text-uppercase" style="color:var(--primary);">Phase 3: Hardware Build</h5>
-                <h1 class="mb-0">Week 13: Hardware Assembly & Initial Testing</h1>
+                <h1 class="mb-0">Week 13: Inductor Winding Calculation & Schematic Refinement</h1>
             </div>
             <div class="week-meta-box mb-4">
                 <p><strong>Phase:</strong> Phase 3: Hardware Build</p>
-                <p><strong>Status:</strong> ⏳ Upcoming</p>
+                <p><strong>Status:</strong> ✅ Completed</p>
             </div>
             <div class="row g-4">
                 <div class="col-lg-8">
                     <h4 class="text-primary mb-3"><i class="fa fa-tasks me-2"></i>What We Did This Week</h4>
-                    <ul class="list-unstyled"><li class="deliverable-item py-2">This week has not started yet. Check back soon for the update!</li>
-<li class="deliverable-item py-2">Planned work will be documented here each week as the project progresses.</li></ul>
-                    <div class="img-placeholder my-4">
-                        📷 Add your Week 13 photo, diagram, or screenshot here.<br>
-                        <small>Upload to the <code>img/</code> folder on GitHub, then replace this with:<br>
-                        &lt;img src="img/week13-photo.jpg" class="img-fluid rounded" alt="Week 13"&gt;</small>
+                    <ul class="list-unstyled">
+                        <li class="deliverable-item py-2">Confirmed the toroidal ferrite core for the boost inductor (L1), as specified by our supervisor: MS-130060-2 (33.8 x 19.3 x 11.6mm), AL = 61nH/N².</li>
+                        <li class="deliverable-item py-2">Calculated the number of turns needed to reach our target inductance of 2000µH using N = √(L / AL), giving N ≈ 181 turns.</li>
+                        <li class="deliverable-item py-2">Drew a simple, hand-drawn circuit diagram of the boost converter for quick reference during winding and assembly.</li>
+                        <li class="deliverable-item py-2">Documented the full calculation and core specifications in this week's report (PDF, linked below).</li>
+                    </ul>
+                    <div class="my-4">
+                        <a href="week13.pdf" class="btn btn-outline-primary" target="_blank">
+                            <i class="fa fa-file-pdf me-2"></i>View Week 13 Report (PDF)
+                        </a>
+                        <small class="d-block mt-2 text-muted">Upload <code>week13.pdf</code> to the same folder as this page on GitHub for the link to work.</small>
                     </div>
                     <h4 class="text-primary mb-3 mt-4"><i class="fa fa-exclamation-circle me-2"></i>Challenges &amp; Solutions</h4>
-                    <p>To be documented once this week is complete.</p>
+                    <p>We ran into problems when switching the control design from Arduino Uno to STM32 Bluepill — pin assignments, logic levels, and gate driver supply connections all had to be reworked, and a few wiring mistakes (like the VDD/VCC voltage mix-up on the IR2110) only showed up after redrawing the schematic for STM32.</p>
                     <h4 class="text-primary mb-3 mt-4"><i class="fa fa-forward me-2"></i>Plan for Next Week</h4>
-                    <p>Update will be added when this week begins.</p>
+                    <p>Finalize the PCB with these connections to move forward with making the prototype.</p>
                 </div>
                 <div class="col-lg-4">
                     <div class="bg-light rounded p-4">
